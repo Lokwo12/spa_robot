@@ -17,6 +17,25 @@ It demonstrates how a robot can sense its environment, plan actions, and execute
 
 ## How to Run
 1. Create and activate a virtual environment (optional but recommended):
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
+`python3 -m venv .venv`
+`source .venv/bin/activate`
+
+## 2. Install any dependencies (standard Python library is sufficient for this project):
+`pip install --upgrade pip`
+
+## 3. Run the main robot simulation:
+`python spa_robot.py`
+
+## 4. Run the tests:
+`python test_robot.py`
+
+## 5. Dependencies.
+- Python 3.x
+- Standard Python libraries (`random`, `time`)
+
+
+## Features
+- Randomized environmental sensing
+- Simple decision-making (move forward or turn right)
+- Battery level management
+- Modular design for easy extension
