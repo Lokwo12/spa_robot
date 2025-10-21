@@ -39,3 +39,31 @@ It demonstrates how a robot can sense its environment, plan actions, and execute
 - Simple decision-making (move forward or turn right)
 - Battery level management
 - Modular design for easy extension
+
+
+
+
+## class
+
+- Architectures
+- modules
+- 
+'''mermaid
+
+architecture-beta
+    group api_v(cloud)[VirtualRobotAPI]
+
+    service SenServer(SenServer)[SensorServer] in api_v
+    service PlanServer(PlanServer)[PlanningServer] in api_v
+    service ActServer(ActServer)[ActionServer] in api_v
+
+    SenServer:L --> R: PlanServer
+    PlanServer:L --> R: ActServer
+
+    group api_p(cloud)[PhysicalRobotAPI]
+
+    service PhysicalSensors(SensorServer)[PhysSensor] in api_p
+    service PhysicalActuators(ActuatorServer)[PhysAct] in api_p
+
+    PhysSensors:T --> B: Senserver
+    ActServer:
